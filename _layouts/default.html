@@ -120,6 +120,8 @@
             lowerBaseSystem = (enteredAge - 29) / 2
             let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
             document.getElementById("base-conversion").innerText = `You are 29 in exactly base system ${lowerBaseSystemStr}.`;
+        } else if (!(enteredAge === undefined || enteredAge === null) && enteredAge > 0) {
+            document.getElementById("base-conversion").innerText = `Age must be 29 or above for calculator to function`;
         }
     }
 </script>
