@@ -110,19 +110,18 @@
     function calcBaseSystem(event) {
         event.preventDefault();
         const enteredAge = Math.ceil(event.target.value);
-        let lowerBaseSystem = 0;
-        let higherBaseSystem = 0;
+        let baseSystem = 0;
         document.getElementById("base-conversion").innerText = `Enter age to display base system for desired age (29).`;
         if (enteredAge > 149) {
             document.getElementById("base-conversion").innerText = `Can only convert up to 149.`;
         } else if (enteredAge > 28 && enteredAge % 2 === 0) {
-            lowerBaseSystem = Math.ceil((enteredAge - 29) / 2);
-            let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
+            baseSystem = Math.ceil((enteredAge - 29) / 2);
+            let lowerBaseSystemStr = baseSystemsConvert[baseSystem];
             document.getElementById("base-conversion").innerText = `You are currently 28 awaiting your 29th birthday in
             ${lowerBaseSystemStr} base system .`;
         } else if (enteredAge > 28 && enteredAge % 2 === 1) {
-            lowerBaseSystem = (enteredAge - 29) / 2
-            let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
+            baseSystem = (enteredAge - 29) / 2
+            let lowerBaseSystemStr = baseSystemsConvert[baseSystem];
             document.getElementById("base-conversion").innerText = `You just had your 29th birthday in ${lowerBaseSystemStr} base system.`;
         } else if (!(enteredAge === undefined || enteredAge === null) && enteredAge > 0) {
             document.getElementById("base-conversion").innerText = `Age must be 29 or above for calculator to function`;
