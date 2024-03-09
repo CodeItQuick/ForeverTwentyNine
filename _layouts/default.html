@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.6/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- Include the Alpine library on your page -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <!-- Include the TailwindCSS library on your page -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
+    <title>CodeItQuick Project Graveyard</title>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="min-h-screen flex items-center justify-center w-full dark:bg-gray-950">
+        <div class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md">
+            <h1 class="text-2xl font-bold text-center mb-4 dark:text-gray-200">Forever 29: What Number Base System Are You 29 In</h1>
+            <form action="#">
+                <div class="mb-4">
+                    <label for="currentage" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Current Age</label>
+                    <input
+                            type="number"
+                            id="currentage"
+                            class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                            placeholder="your@email.com"
+                            required>
+                </div>
+                <div id="base-conversion" class="mb-4">
+                    Enter Data to display base system for desired age (29).
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script lang="javascript">
+    var [...input] = document.querySelectorAll("#currentage")
+    input[0].addEventListener("change", calcBaseSystem)
+    var baseSystemsConvert = [
+    "decimal",
+    "Undecimal",
+    "Duodecimal",
+    "Tridecimal",
+    "Tetradecimal",
+    "Pentadecimal",
+    "Hexadecimal",
+    "Septendecimal",
+    "Octodecimal",
+    "Nonadecimal",
+    "Vigesimal",
+    "Unvigesimal",
+    "Duovigesimal",
+    "Trevigesimal",
+    "Tetravigesimal",
+    "Pentavigesimal",
+    "Hexavigesimal",
+    "Septemvigesimal",
+    "Octovigesimal",
+    "Nonavigesimal",
+    "Trigesimal",
+    "Untrigesimal",
+    "Duotrigesimal",
+    "Tritrigesimal",
+    "Tetratrigesimal",
+    "Pentatrigesimal",
+    "Hexatrigesimal",
+    "Septemtrigesimal",
+    "Octotrigesimal",
+    "Nonatrigesimal",
+    "Quadragesimal",
+    "Unquadragesimal",
+    "Duquadragesimal",
+    "Tresquadragesimal",
+    "Quattuorquadragesimal",
+    "Quinquagesimal",
+    "Unquinquagesimal",
+    "Duquinquagesimal",
+    "Tresquinquagesimal",
+    "Quattuorquinquagesimal",
+    "Quinquagintal",
+    "Unquinquagintal",
+    "Duquinquagintal",
+    "Tresquinquagintal",
+    "Quattuorquinquagintal",
+    "Quinquagintaseptal",
+    "Unquinquagintaseptal",
+    "Duquinquagintaseptal",
+    "Tresquinquagintaseptal",
+    "Quattuorquinquagintaseptal",
+    "Sexagesimal",
+    "Unsexagesimal",
+    "Duosexagesimal",
+    "Tresexagesimal",
+    "Quattuorsexagesimal",
+    "Quinquagesimal",
+    "Unquinquagesimal",
+    "Duquinquagesimal",
+    "Tresquinquagesimal",
+    "Quattuorquinquagesimal",
+    "Septuagintal",
+    ];
+    function calcBaseSystem(input) {
+        const enteredAge = input.target.value;
+        var lowerBaseSystem = 0;
+        var higherBaseSystem = 0;
+        document.getElementById("base-conversion").innerText = `Enter Data to display base system for desired age (29).`;
+        if (enteredAge > 28 && enteredAge % 2 === 0) {
+            lowerBaseSystem = Math.floor((enteredAge - 29) / 2);
+            let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
+            higherBaseSystem = Math.ceil((enteredAge - 29) / 2);
+            let higherBaseSystemStr = baseSystemsConvert[higherBaseSystem];
+            document.getElementById("base-conversion").innerText = `You are 29 between bases ${lowerBaseSystemStr} and ${higherBaseSystemStr}.`;
+        } else if (enteredAge > 28 && enteredAge % 2 === 1) {
+            lowerBaseSystem = (enteredAge - 29) / 2
+            let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
+            document.getElementById("base-conversion").innerText = `You are 29 in exactly base system ${lowerBaseSystemStr}.`;
+        }
+    }
+</script>
+</html>
