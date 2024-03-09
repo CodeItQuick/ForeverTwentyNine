@@ -120,11 +120,12 @@
             let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
             higherBaseSystem = Math.ceil((enteredAge - 29) / 2);
             let higherBaseSystemStr = baseSystemsConvert[higherBaseSystem];
-            document.getElementById("base-conversion").innerText = `You are currently 28 in ${lowerBaseSystemStr} and awaiting your 29th birthday in ${higherBaseSystemStr}.`;
+            document.getElementById("base-conversion").innerText = `You are currently 28 in ${lowerBaseSystemStr} base system
+            and awaiting your 29th birthday in ${higherBaseSystemStr} base system .`;
         } else if (enteredAge > 28 && enteredAge % 2 === 1) {
             lowerBaseSystem = (enteredAge - 29) / 2
             let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
-            document.getElementById("base-conversion").innerText = `You are 29 in exactly base system ${lowerBaseSystemStr}.`;
+            document.getElementById("base-conversion").innerText = `You just had your 29th birthday in ${lowerBaseSystemStr} base system.`;
         } else if (!(enteredAge === undefined || enteredAge === null) && enteredAge > 0) {
             document.getElementById("base-conversion").innerText = `Age must be 29 or above for calculator to function`;
         }
