@@ -25,8 +25,10 @@
             <div class="mb-4">
                 <label for="currentage" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Current Age</label>
                 <input
-                        type="number"
                         id="currentage"
+                        type="number"
+                        min="1"
+                        max="149"
                         class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter current age"
                         required>
@@ -110,7 +112,10 @@
         let lowerBaseSystem = 0;
         let higherBaseSystem = 0;
         document.getElementById("base-conversion").innerText = `Enter Data to display base system for desired age (29).`;
-        if (enteredAge > 28 && enteredAge % 2 === 0) {
+        console.log(baseSystemsConvert)
+        if (enteredAge > 149) {
+            document.getElementById("base-conversion").innerText = `Can only convert up to 149.`;
+        } else if (enteredAge > 28 && enteredAge % 2 === 0) {
             lowerBaseSystem = Math.floor((enteredAge - 29) / 2);
             let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
             higherBaseSystem = Math.ceil((enteredAge - 29) / 2);
