@@ -109,7 +109,7 @@
     ];
     function calcBaseSystem(event) {
         event.preventDefault();
-        const enteredAge = event.target.value;
+        const enteredAge = Math.ceil(event.target.value);
         let lowerBaseSystem = 0;
         let higherBaseSystem = 0;
         document.getElementById("base-conversion").innerText = `Enter Data to display base system for desired age (29).`;
