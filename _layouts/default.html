@@ -113,7 +113,7 @@
         let baseSystem = 0;
         document.getElementById("base-conversion").innerText = `Enter age to display base system for desired age (29).`;
         if (enteredAge > 149) {
-            document.getElementById("base-conversion").innerText = `Can only convert up to 149.`;
+            document.getElementById("base-conversion").innerText = `Can only convert up to age 149.`;
         } else if (enteredAge > 28 && enteredAge % 2 === 0) {
             baseSystem = Math.ceil((enteredAge - 29) / 2);
             let lowerBaseSystemStr = baseSystemsConvert[baseSystem];
