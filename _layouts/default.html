@@ -116,12 +116,10 @@
         if (enteredAge > 149) {
             document.getElementById("base-conversion").innerText = `Can only convert up to 149.`;
         } else if (enteredAge > 28 && enteredAge % 2 === 0) {
-            lowerBaseSystem = Math.floor((enteredAge - 29) / 2);
+            lowerBaseSystem = Math.ceil((enteredAge - 29) / 2);
             let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
-            higherBaseSystem = Math.ceil((enteredAge - 29) / 2);
-            let higherBaseSystemStr = baseSystemsConvert[higherBaseSystem];
-            document.getElementById("base-conversion").innerText = `You are currently 28 in ${lowerBaseSystemStr} base system
-            and awaiting your 29th birthday in ${higherBaseSystemStr} base system .`;
+            document.getElementById("base-conversion").innerText = `You are currently 28 awaiting your 29th birthday in
+            ${lowerBaseSystemStr} base system .`;
         } else if (enteredAge > 28 && enteredAge % 2 === 1) {
             lowerBaseSystem = (enteredAge - 29) / 2
             let lowerBaseSystemStr = baseSystemsConvert[lowerBaseSystem];
